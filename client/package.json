@@ -9,8 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist",
-    "predeploy": "npm run build"
+    "deploy": "vite build && gh-pages -d dist",
+    "predeploy": "echo > dist/.nojekyll"
   },
   "dependencies": {
     "@telegram-apps/sdk-react": "^2.0.11",
