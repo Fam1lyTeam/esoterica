@@ -5,22 +5,16 @@ import mkcert from 'vite-plugin-mkcert';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/reactjs-template',
+  base: process.env.VITE_BASE_URL || '/', // Путь для GitHub Pages или других сред
   plugins: [
-    // Allows using React dev server along with building a React application with Vite.
-    // https://npmjs.com/package/@vitejs/plugin-react-swc
-    react(),
-    // Allows using the compilerOptions.paths property in tsconfig.json.
-    // https://www.npmjs.com/package/vite-tsconfig-paths
-    tsconfigPaths(),
-    // Create a custom SSL certificate valid for the local machine.
-    // https://www.npmjs.com/package/vite-plugin-mkcert
-    mkcert(),
+    react(), // Плагин для React (с использованием SWC для более быстрой сборки)
+    tsconfigPaths(), // Поддержка alias путей из tsconfig.json
+    mkcert(), // Локальные SSL-сертификаты для https
   ],
-  publicDir: './public',
+  publicDir: './public', // Директория для статических файлов
   server: {
-    // Exposes your dev server and makes it accessible for the devices in the same network.
-    host: true,
-  },
+    host: true, // Доступ для устройств в одной сети
+  }
 });
+
 

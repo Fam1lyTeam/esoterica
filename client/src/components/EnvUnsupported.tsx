@@ -1,8 +1,13 @@
 import { Placeholder, AppRoot } from '@telegram-apps/telegram-ui';
 import { retrieveLaunchParams, isColorDark, isRGB } from '@telegram-apps/sdk-react';
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { publicUrl } from '@/core/publicUrl';
 
 export function EnvUnsupported() {
+  
+  const { t } = useTranslation();
+
   const [platform, isDark] = useMemo(() => {
     let platform = 'base';
     let isDark = false;
@@ -23,12 +28,12 @@ export function EnvUnsupported() {
       platform={['macos', 'ios'].includes(platform) ? 'ios' : 'base'}
     >
       <Placeholder
-        header="Oops"
-        description="You are using too old Telegram client to run this application"
+        header={t('envUnsupported.header')}
+        description={t('envUnsupported.description')}
       >
         <img
-          alt="Telegram sticker"
-          src="https://xelene.me/telegram.gif"
+          alt="sticker"
+          src={publicUrl('oops.png')}
           style={{ display: 'block', width: '144px', height: '144px' }}
         />
       </Placeholder>

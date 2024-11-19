@@ -1,0 +1,36 @@
+  .menu-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #1f0835;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -4px 10px rgba(255, 255, 255, 0.1), 0 -2px 6px rgba(255, 255, 255, 0.2);
+  }
+
+  .menu-list {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .menu-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .menu-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+  }
+
+  .menu-icon svg {
+    stroke: #fff;
+  }

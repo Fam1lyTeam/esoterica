@@ -6,6 +6,6 @@
 export function publicUrl(path: string): string {
   return new URL(
     path.replace(/^\/+/, ''),
-    window.location.origin + import.meta.env.BASE_URL
+    window.location.origin + import.meta.env.VITE_BASE_URL
   ).toString();
 }

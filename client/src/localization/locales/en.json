@@ -1,0 +1,21 @@
+{
+  "envUnsupported": {
+    "header": "Oops",
+    "description": "You are using too old Telegram client to run this application"
+  },
+  "ErrorBoundary" : {
+    "message": "Something went wrong. Please try again later"
+  },
+  "routes": {
+    "index": "Calculator",
+    "experts": "Experts",
+    "earn": "Earn",
+    "friends": "Friends"
+  },
+  "main": {
+    "unknownUser": "User",
+    "title": "Numerology calculator",
+    "inputLabel": "Enter your date of birth",
+    "button": "Calculate"
+  }
+}
