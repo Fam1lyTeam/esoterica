@@ -5,7 +5,7 @@ import mkcert from 'vite-plugin-mkcert';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.VITE_BASE_URL || '/', // Путь для GitHub Pages или других сред
+  base: '/esoterica/', // Путь для GitHub Pages или других сред
   plugins: [
     react(), // Плагин для React (с использованием SWC для более быстрой сборки)
     tsconfigPaths(), // Поддержка alias путей из tsconfig.json
