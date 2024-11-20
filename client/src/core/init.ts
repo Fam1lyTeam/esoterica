@@ -3,6 +3,7 @@ import {
   viewport,
   themeParams,
   miniApp,
+  swipeBehavior,
   initData,
   $debug,
   init as initSDK,
@@ -32,6 +33,7 @@ export function init(debug: boolean): void {
   // Mount all components used in the project.
   backButton.mount();
   miniApp.mount();
+  swipeBehavior.mount();
   themeParams.mount();
   initData.restore();
   void viewport
@@ -43,7 +45,17 @@ export function init(debug: boolean): void {
       viewport.bindCssVars();
     });
 
+
+  swipeBehavior.disableVertical();
   // Define components-related CSS variables.
   miniApp.bindCssVars();
   themeParams.bindCssVars();
+
+  if (miniApp.setHeaderColor.isAvailable()) {
+    miniApp.setHeaderColor('#020024');
+  }
+
+  if (miniApp.setBackgroundColor.isAvailable()) {
+    miniApp.setBackgroundColor('#1f0835');
+  }
 }

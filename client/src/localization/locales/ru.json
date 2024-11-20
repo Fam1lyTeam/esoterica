@@ -1,6 +1,6 @@
 {
   "envUnsupported": {
-    "header": "Упс",
+    "header": "Упс...",
     "description": "Вы используете слишком старый клиент Telegram для запуска этого приложения"
   },
   "ErrorBoundary" : {

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Page } from '@/components/Page.tsx';
 import { useTranslation } from 'react-i18next';
 import { useSignal, initData } from '@telegram-apps/sdk-react';
+import { DateInput } from '@/components/DateInput/DateInput';
 
 import { AvatarIcon } from '@/components/Icons/Avatar';
 
@@ -14,7 +15,7 @@ export const Main: React.FC = () => {
   const initDataState = useSignal(initData.state);
 //  const navigate = useNavigate();
 
-  const [birthDate, setBirthDate] = useState<string>('');
+  const [birthDate, setBirthDate] = useState('');
 
   const toggleLanguage = () => {
     const newLanguage = i18n.language === 'ru' ? 'en' : 'ru';
@@ -58,11 +59,10 @@ export const Main: React.FC = () => {
         <div className='calculator-container'>
           <h1 className='title-gradient'>{t('main.title')}</h1>
           <p>{t('main.inputLabel')}</p>
-          <input 
-            className='calculator-input'
-            type="date" 
+          <DateInput
             value={birthDate}
-            onChange={(e) => setBirthDate(e.target.value)}
+            onChange={(value) => setBirthDate(value)}
+            className='calculator-input'
           />
           <button className='calculator-button' onClick={handleCalculate}>
             {t('main.button')}

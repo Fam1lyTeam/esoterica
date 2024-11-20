@@ -4,10 +4,10 @@ import '@/localization/i18n';
 import { retrieveLaunchParams } from '@telegram-apps/sdk-react';
 
 import { Root } from '@/Root.tsx';
-import { EnvUnsupported } from '@/components/EnvUnsupported.tsx';
+import { Unsupported } from '@/components/Unsupported/Unsupported';
 import { init } from '@/core/init';
 
-import '@telegram-apps/telegram-ui/dist/styles.css';
+//import '@telegram-apps/telegram-ui/dist/styles.css';
 
 // Mock the environment in case, we are outside Telegram.
 //import '@/core/mockEnv';
@@ -25,5 +25,5 @@ try {
   );
 
 } catch (e) {
-  root.render(<EnvUnsupported/>);
+  root.render(<Unsupported/>);
 }

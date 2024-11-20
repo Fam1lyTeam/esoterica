@@ -1,0 +1,25 @@
+.unsupported {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
+}
+.unsupported {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.unsupported img {
+  width: 200px;
+}
+.unsupported h1 {
+  font-size: 2rem;
+  margin: 30px 0;
+}
+.unsupported p {
+  margin: 0 40px;
+  text-align: center;
+  font-size: 1.5rem;
+}

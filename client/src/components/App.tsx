@@ -8,7 +8,7 @@ import '@/assets/global.css';
 import '@/assets/font.css';
 import '@/assets/esoterica.css';
 
-export function App() {
+export const App: React.FC = () => {
   const lp = useLaunchParams();
   const isDark = useSignal(miniApp.isDark);
 

@@ -1,10 +1,10 @@
 import { classNames, openLink } from '@telegram-apps/sdk-react';
 import { type FC, type MouseEventHandler, useCallback } from 'react';
-import { Link as RouterLink, type LinkProps } from 'react-router-dom';
+import { NavLink, type NavLinkProps } from 'react-router-dom';
 
 import './Link.css';
 
-export const Link: FC<LinkProps> = ({
+export const Link: FC<NavLinkProps> = ({
   className,
   onClick: propsOnClick,
   to,
@@ -35,11 +35,13 @@ export const Link: FC<LinkProps> = ({
   }, [to, propsOnClick]);
 
   return (
-    <RouterLink
+    <NavLink
       {...rest}
       to={to}
       onClick={onClick}
-      className={classNames(className, 'link')}
+      className={({ isActive }) =>
+        classNames(className, 'link', isActive && 'active')
+      }
     />
   );
 };
