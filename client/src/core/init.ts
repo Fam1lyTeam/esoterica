@@ -47,6 +47,7 @@ export function init(debug: boolean): void {
 
 
   swipeBehavior.disableVertical();
+  
   // Define components-related CSS variables.
   miniApp.bindCssVars();
   themeParams.bindCssVars();

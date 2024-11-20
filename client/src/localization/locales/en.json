@@ -10,12 +10,26 @@
     "index": "Calculator",
     "experts": "Experts",
     "earn": "Earn",
-    "friends": "Friends"
+    "friends": "Friends",
+    "results": {
+      "main": "Calculation results",
+      "matrix": "Matrix of Destiny",
+      "pythagoras": "Pythagoras square",
+      "karmic": "Karmic portrait",
+      "psychological": "Psychological portrait",
+      "prognostics": "Prognostics",
+      "relationship": "Numerology of relationships"
+    }
   },
   "main": {
     "unknownUser": "User",
     "title": "Numerology calculator",
     "inputLabel": "Enter your date of birth",
     "button": "Calculate"
+  },
+  "results": {
+    "selectDateTitle": "Date not selected",
+    "selectDateDesc": "Go back and select a date",
+    "backButton": "Back"
   }
 }

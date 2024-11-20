@@ -1,33 +1,32 @@
 import { useState } from 'react';
-//import { useNavigate } from 'react-router-dom';
-import { Page } from '@/components/Page.tsx';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { loadLanguage } from '@/localization/i18n';
 import { useSignal, initData } from '@telegram-apps/sdk-react';
+import { useDate } from '@/core/DateContext';
+import { Page } from '@/components/Page.tsx';
 import { DateInput } from '@/components/DateInput/DateInput';
 
 import { AvatarIcon } from '@/components/Icons/Avatar';
 
 import './Main.css';
 
-
 export const Main: React.FC = () => {
   const { t, i18n } = useTranslation();
   const initDataState = useSignal(initData.state);
-//  const navigate = useNavigate();
+  const { setDate } = useDate();
+  const navigate = useNavigate();
+
+  const toggleLanguage = async () => {
+    const lang = i18n.language === 'ru' ? 'en' : 'ru';
+    await loadLanguage(lang);
+  };
 
   const [birthDate, setBirthDate] = useState('');
 
-  const toggleLanguage = () => {
-    const newLanguage = i18n.language === 'ru' ? 'en' : 'ru';
-    i18n.changeLanguage(newLanguage);
-  };
-
   const handleCalculate = () => {
-    if (birthDate) {
-      console.log(`Дата рождения: ${birthDate}`);
-    } else {
-      console.log(`Введите дату рождения`);
-    }
+    setDate(birthDate);
+    navigate('/results');
   };
 
   return (
