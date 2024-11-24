@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { loadLanguage } from '@/localization/i18n';
 import { useSignal, initData } from '@telegram-apps/sdk-react';
-import dayjs from 'dayjs';
 import { useDate } from '@/core/DateContext';
 import { Page } from '@/components/Page.tsx';
 import { DateInput } from '@/components/DateInput/DateInput';
@@ -26,36 +25,44 @@ export const Main: React.FC = () => {
 
   const [birthDate, setBirthDate] = useState('');
 
+  const isValidDate = (date: string): boolean => {
+    const match = date.match(/^(\d{2})(\d{2})(\d{4})$/);
+    if (!match) return false;
+
+    const [_, day, month, year] = match.map(Number);
+    const dateObj = new Date(year, month - 1, day);
+
+    return (
+      dateObj.getFullYear() === year &&
+      dateObj.getMonth() === month - 1 &&
+      dateObj.getDate() === day
+    );
+  };
+
   const handleCalculate = () => {
+
     try {
+      let formattedDate = '';
 
-      let formattedBirthDate = '';
-
-      if (typeof birthDate === 'string') {
-        if (!/^\d{8}$/.test(birthDate)) {
-          setErrorMessage('Введите корректную дату в формате dd.mm.yyyy');
-          setTimeout(() => { setErrorMessage('') }, 3000);
-          return;
-        }
-        formattedBirthDate = birthDate.replace(/^(\d{2})(\d{2})(\d{4})$/, '$1.$2.$3');
-      } else if (birthDate && Object.prototype.toString.call(birthDate) === '[object Date]') {
-        formattedBirthDate = dayjs(birthDate).format('DD.MM.YYYY');
+      if (/^\d{8}$/.test(birthDate)) {
+        formattedDate = birthDate.replace(/^(\d{2})(\d{2})(\d{4})$/, '$1.$2.$3');
       } else {
-        setErrorMessage('Введите корректную дату в формате dd.mm.yyyy');
-        setTimeout(() => { setErrorMessage('') }, 3000);
+        setErrorMessage(t('errors.invalidDate'));
+        setTimeout(() => setErrorMessage(''), 3000);
         return;
       }
-      const parsedDate = dayjs(formattedBirthDate, 'DD.MM.YYYY', true);
-      if (parsedDate.isValid()) {
-        setDate(formattedBirthDate);
-        navigate('/results');
-      } else {
-        setErrorMessage('Введите корректную дату в формате dd.mm.yyyy');
-        setTimeout(() => { setErrorMessage('') }, 3000);
+
+      if (!isValidDate(birthDate)) {
+        setErrorMessage(t('errors.invalidDate'));
+        setTimeout(() => setErrorMessage(''), 3000);
+        return;
       }
+
+      setDate(formattedDate);
+      navigate('/results');
     } catch (error) {
-      setErrorMessage('Введите корректную дату в формате dd.mm.yyyy');
-      setTimeout(() => { setErrorMessage('') }, 3000);
+      setErrorMessage(t('errors.invalidDate'));
+      setTimeout(() => setErrorMessage(''), 3000);
     }
   };
 
