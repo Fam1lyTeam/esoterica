@@ -6,16 +6,35 @@ interface DateInputProps {
   value: string;
   onChange: (value: string) => void;
   className?: string;
+  onEnter?: () => void;
 }
+
+const isUnsupportedDevice = () => {
+  const ua = navigator.userAgent.toLowerCase();
+  return ua.includes('hios');
+}; 
 
 export const DateInput: React.FC<DateInputProps> = ({
   value,
   onChange,
-  className
+  className,
+  onEnter
 }) => {
+
+  if (isUnsupportedDevice()) {
+    return (
+      <input
+        type="date"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={className}
+      />
+    );
+  } 
+
   return (
     <IMaskInput
-      mask={Date}
+      mask="d.m.Y"
       value={value}
       onAccept={(value: string) => onChange(value)}
       lazy={false}
@@ -44,6 +63,14 @@ export const DateInput: React.FC<DateInputProps> = ({
       }}
       unmask={true}
       className={className}
+      inputMode="numeric"
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          onEnter?.();
+        }
+      }}
+      enterKeyHint="done"
     />
   );
 };

@@ -1,14 +1,11 @@
 import { AppRoot } from '@telegram-apps/telegram-ui';
 import { retrieveLaunchParams, isColorDark, isRGB } from '@telegram-apps/sdk-react';
 import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { publicUrl } from '@/core/publicUrl';
 
 import './Unsupported.css';
 
 export const Unsupported: React.FC = () => {
-  
-  const { t } = useTranslation();
 
   const [platform, isDark] = useMemo(() => {
     let platform = 'base';
@@ -33,8 +30,8 @@ export const Unsupported: React.FC = () => {
         <main className="main-container">
           <div className='unsupported'>
             <img alt="sticker" src={publicUrl('oops.png')}/>
-            <h1>{t('envUnsupported.header')}</h1>
-            <p>{t('envUnsupported.description')}</p>
+            <h1>Oops...</h1>
+            <p>You are using too old Telegram client to run this application</p>
           </div>
         </main>
       </div>

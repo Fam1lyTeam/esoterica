@@ -14,6 +14,16 @@ export default defineConfig({
   publicDir: './public', // Директория для статических файлов
   server: {
     host: true, // Доступ для устройств в одной сети
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          telegram: ['@telegram-apps/sdk-react', '@telegram-apps/telegram-ui'],
+          ton: ['@tonconnect/ui-react'],
+        },
+      },
+    },
   }
 });
 

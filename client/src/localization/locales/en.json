@@ -1,11 +1,4 @@
 {
-  "envUnsupported": {
-    "header": "Oops...",
-    "description": "You are using too old Telegram client to run this application"
-  },
-  "ErrorBoundary" : {
-    "message": "Something went wrong. Please try again later"
-  },
   "routes": {
     "index": "Calculator",
     "experts": "Experts",

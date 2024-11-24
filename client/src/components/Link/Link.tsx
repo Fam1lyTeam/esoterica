@@ -38,10 +38,9 @@ export const Link: FC<NavLinkProps> = ({
     <NavLink
       {...rest}
       to={to}
+      end
       onClick={onClick}
-      className={({ isActive }) =>
-        classNames(className, 'link', isActive && 'active')
-      }
+      className={({ isActive }) => classNames(className, 'link', isActive && 'active')}
     />
   );
 };

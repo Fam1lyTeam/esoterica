@@ -11,10 +11,10 @@ import '@/assets/global.css';
 import '@/assets/font.css';
 import '@/assets/esoterica.css';
 
-type RouteWithChildren = RouteObject & {
+ type RouteWithChildren = RouteObject & {
   Component: React.ComponentType<any>;
   children?: RouteWithChildren[];
-};
+}; 
 
 export const App: React.FC = () => {
   const lp = useLaunchParams();
