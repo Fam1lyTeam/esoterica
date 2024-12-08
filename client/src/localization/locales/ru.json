@@ -26,6 +26,36 @@
   "results": {
     "selectDateTitle": "Дата не выбрана",
     "selectDateDesc": "Вернитесь назад и выберите дату",
-    "backButton": "Назад"
+    "backButton": "Назад",
+    "titles": {
+      "matrix": "Матрица судьбы",
+      "pythagoras": "Квадрат Пифагора",
+      "karmic": "Кармический портрет",
+      "psychological": "Психологический портрет",
+      "prognostics": "Прогностика",
+      "relationship": "Нумерология отношения"
+    }
+  },
+  "pythagoras": {
+    "additional": "Дополнительные числа",
+    "destiny": "Число судьбы",
+    "temperament": "Темперамент",
+    "character": "Характер",
+    "health": "Здоровье",
+    "luck": "Удача",
+    "goal": "Цель",
+    "energy": "Энергия",
+    "logic": "Логика",
+    "duty": "Долг",
+    "family": "Семья",
+    "interest": "Интерес",
+    "labor": "Труд",
+    "memory": "Память",
+    "habits": "Привычки",
+    "self": "Самооценка",
+    "money": "Быт/Деньги",
+    "talent": "Талант",
+    "spirituality": "Духовность"
+    
   }
 }

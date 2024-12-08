@@ -26,6 +26,36 @@
   "results": {
     "selectDateTitle": "Date not selected",
     "selectDateDesc": "Go back and select a date",
-    "backButton": "Back"
+    "backButton": "Back",
+    "titles": {
+      "main": "Calculation results",
+      "matrix": "Matrix of Destiny",
+      "pythagoras": "Pythagoras square",
+      "karmic": "Karmic portrait",
+      "psychological": "Psychological portrait",
+      "prognostics": "Prognostics",
+      "relationship": "Numerology of relationships"
+    }
+  },
+  "pythagoras": {
+    "additional": "Additional Numbers",
+    "destiny": "Destiny Number",
+    "temperament": "Temperament",
+    "character": "Character",
+    "health": "Health",
+    "luck": "Luck",
+    "goal": "Goal",
+    "energy": "Energy",
+    "logic": "Logic",
+    "duty": "Duty",
+    "family": "Family",
+    "interest": "Interest",
+    "labor": "Labor",
+    "memory": "Memory",
+    "habits": "Habits",
+    "self": "Self-Esteem",
+    "money": "Life and Money",
+    "talent": "Talent",
+    "spirituality": "Spirituality"
   }
 }

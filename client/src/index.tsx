@@ -6,7 +6,7 @@ import { Root } from '@/Root.tsx';
 import { Unsupported } from '@/components/Unsupported/Unsupported';
 
 // Mock the environment in case, we are outside Telegram.
-import '@/core/mockEnv';
+//import '@/core/mockEnv';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
