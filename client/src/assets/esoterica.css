@@ -56,3 +56,33 @@ html, body {
   visibility: visible;
   animation: scale .3s cubic-bezier(.68, -.55, .265, 1.55) forwards;
 }
+
+
+/* Для разделов в разработке */
+.developer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.developer-text p {
+  font-size: 1.4rem;
+  text-align: center;
+}
+.developer-text p:first-child {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.developer-text a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg,#63118e 0%,#c953c7 50%,#661492 100%);
+  box-shadow: inset 0 4px 12px #ac38eb;
+  width: 250px;
+  height: 50px;
+  border-radius: 30px;
+  margin-top: 30px;
+  font-size: 1.4rem;
+}

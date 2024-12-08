@@ -1,0 +1,12 @@
+.earn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 15px;
+}
+.earn-container h1 {
+  text-align: center;
+  font-size: 2rem;
+}

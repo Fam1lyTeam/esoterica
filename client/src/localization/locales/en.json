@@ -57,5 +57,22 @@
     "money": "Life and Money",
     "talent": "Talent",
     "spirituality": "Spirituality"
+  },
+  "experts": {
+    "title": "Numerology Experts",
+    "firstText": "This section is under development",
+    "secondText": "Want to be featured in this catalog?",
+    "thirdText": "Contact us on Telegram",
+    "button": "Write to Telegram"
+  },
+  "earn": {
+    "title": "Earn",
+    "firstText": "Soon you will be able to earn with our app",
+    "secondText": "Stay tuned for updates to not miss the launch!"
+  },
+  "friends": {
+    "title": "My Friends",
+    "firstText": "Invite friends and earn points!",
+    "secondText": "This section is under development, but very soon we will share how it will work"
   }
 }
