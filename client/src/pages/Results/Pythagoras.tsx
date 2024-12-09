@@ -19,12 +19,23 @@ export const Pythagoras: React.FC = () => {
   const calculateAdditionalNumbers = (birthDate: string): number[] => {
     const digits = birthDate.replace(/\D/g, '').split('').map(Number);
     const firstNumber = digits.reduce((sum, digit) => sum + digit, 0);
-    const secondNumber = firstNumber.toString().split('').reduce((sum, digit) => sum + Number(digit), 0);
-    const thirdNumber = Math.abs(firstNumber - secondNumber);
-    const fourthNumber = thirdNumber.toString().split('').reduce((sum, digit) => sum + Number(digit), 0);
-
+  
+    const secondNumber = firstNumber
+      .toString()
+      .split('')
+      .reduce((sum, digit) => sum + Number(digit), 0);
+  
+    const firstDigit = digits[0] || digits[1];
+    const thirdNumber = firstNumber - firstDigit * 2;
+  
+    const fourthNumber = thirdNumber
+      .toString()
+      .split('')
+      .reduce((sum, digit) => sum + Number(digit), 0);
+  
     return [firstNumber, secondNumber, thirdNumber, fourthNumber];
   };
+  
 
   const calculateDestinyNumber = (birthDate: string): number => {
     let num = birthDate.replace(/\D/g, '').split('').reduce((sum, digit) => sum + Number(digit), 0);
