@@ -112,7 +112,7 @@ export const Matrix: React.FC = () => {
   return (
     <div className="results-content">
       <h2 className="results-title">{t('results.titles.matrix')}</h2>
-      <div className="matrix-result">
+      <div className="results-table matrix-result">
         <MatrixSVG data={calculateMatrixOfDestiny(date)} />
       </div>
       <div className="results-comment"></div>

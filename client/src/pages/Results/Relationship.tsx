@@ -8,7 +8,6 @@ export const Relationship: React.FC = () => {
       <h2 className="results-title">{t('results.titles.relationship')}</h2>
       <div className="">
 
- 
       </div>
       <div className="results-comment"></div>
     </div>

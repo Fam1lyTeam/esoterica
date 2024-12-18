@@ -12,6 +12,40 @@ export const Results: React.FC = () => {
   const { t } = useTranslation();
   const { date } = useDate();
 
+  const calculateAgeWithSuffix = (birthDate: string): string => {
+    const [day, month, year] = birthDate.split('.').map(Number);
+    const today = new Date();
+    const birth = new Date(year, month - 1, day);
+  
+    let age = today.getFullYear() - birth.getFullYear();
+  
+    if (
+      today.getMonth() < birth.getMonth() ||
+      (today.getMonth() === birth.getMonth() && today.getDate() < birth.getDate())
+    ) {
+      age--;
+    }
+  
+    const getAgeSuffix = (age: number): string => {
+      const lastDigit = age % 10;
+      const lastTwoDigits = age % 100;
+  
+      if (lastTwoDigits >= 11 && lastTwoDigits <= 14) {
+        return "лет";
+      }
+      if (lastDigit === 1) {
+        return "год";
+      }
+      if (lastDigit >= 2 && lastDigit <= 4) {
+        return "года";
+      }
+      return "лет";
+    };
+  
+    return `${age} ${getAgeSuffix(age)}`;
+  };
+  
+
   return (
     <Page back={true}>
       {!date ? (
@@ -36,7 +70,7 @@ export const Results: React.FC = () => {
             ))}
           </div>
           <div className="results-date">
-            <h1>{date}</h1>
+            <h1><span>{date}</span><span>{calculateAgeWithSuffix(date)}</span></h1>
           </div>
           <Outlet />
         </div>      

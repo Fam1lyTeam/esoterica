@@ -110,7 +110,7 @@ export const Pythagoras: React.FC = () => {
   return (
     <div className="results-content">
       <h2 className="results-title">{t('results.titles.pythagoras')}</h2>
-      <div className="pythagoras-table">
+      <div className="results-table pythagoras-table">
         {tableData.map((cell, index) => (
           <div key={index} className={cell.className}>
             <span className="title">{cell.title}</span>

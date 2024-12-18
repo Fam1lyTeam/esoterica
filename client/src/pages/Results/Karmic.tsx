@@ -30,7 +30,10 @@ export const Karmic: React.FC = () => {
   };
 
   // Функция для разницы чисел с абсолютным значением
-  const absoluteDifference = (a: number, b: number): number => Math.abs(a - b);
+  const absoluteDifference = (a: number, b: number): number => {
+    const result = Math.abs(a - b);
+    return result === 0 ? 22 : result;
+  };
 
   const calculateKarmicPortrait = (birthDate: string): CellData[] => {
     const [day, month, year] = birthDate.split('.').map(Number);
@@ -41,25 +44,37 @@ export const Karmic: React.FC = () => {
     const cell4 = reduceToArcanum(sumDigits(birthDate.replace(/\D/g, '')));
     const cell5 = reduceToArcanum(dayCell + monthCell + yearCell);
 
-    const cell6 = reduceToArcanum(dayCell + monthCell);
-    const cell7 = reduceToArcanum(dayCell + yearCell);
-    const cell8 = reduceToArcanum(cell6 + cell7);
-    const cell9 = reduceToArcanum(monthCell + yearCell);
-    const cell10 = reduceToArcanum(cell6 + cell7 + cell8 + cell9);
-
-    const cell11 = absoluteDifference(dayCell, monthCell);
-    const cell12 = absoluteDifference(dayCell, yearCell);
-    const cell13 = absoluteDifference(cell11, cell12);
-    const cell14 = absoluteDifference(monthCell, yearCell);
+    const cell11 = reduceToArcanum(dayCell + monthCell);
+    const cell12 = reduceToArcanum(dayCell + yearCell);
+    const cell13 = reduceToArcanum(cell11 + cell12);
+    const cell14 = reduceToArcanum(monthCell + yearCell);
     const cell15 = reduceToArcanum(cell11 + cell12 + cell13 + cell14);
+
+    const cell16 = absoluteDifference(dayCell, monthCell);
+    const cell17 = absoluteDifference(dayCell, yearCell);
+    const cell18 = absoluteDifference(cell16, cell17);
+    const cell19 = absoluteDifference(monthCell, yearCell);
+    const cell20 = reduceToArcanum(cell16 + cell17 + cell18 + cell19);
+
+    const cell6 = reduceToArcanum(cell11 + cell16);
+    const cell7 = reduceToArcanum(cell12 + cell17);
+    const cell8 = reduceToArcanum(cell13 + cell18);
+    const cell9 = reduceToArcanum(cell14 + cell19);
+    const cell10 = reduceToArcanum(cell15 + cell20);
+
+    const cell21 = absoluteDifference(cell11, cell16);
+    const cell22 = absoluteDifference(cell12, cell17);
+    const cell23 = absoluteDifference(cell13, cell18);
+    const cell24 = absoluteDifference(cell14, cell19);
+    const cell25 = absoluteDifference(cell15, cell20);
 
     const allDigitsSum = sumDigits(birthDate.replace(/\D/g, ''));
     const singleDigitSum = allDigitsSum % 9 || 9;
-    const period16 = `0 - ${36 - singleDigitSum}`;
-    const period17 = `${36 - singleDigitSum + 1} - ${36 - singleDigitSum + 9}`;
-    const period18 = `${36 - singleDigitSum + 10} - ${36 - singleDigitSum + 18}`;
-    const period19 = `${36 - singleDigitSum + 19} - ${36 - singleDigitSum + 27}`;
-    const period20 = `${36 - singleDigitSum + 28} - ∞`;
+    const period1 = `0 - ${36 - singleDigitSum}`;
+    const period2 = `${36 - singleDigitSum + 1} - ${36 - singleDigitSum + 9}`;
+    const period3 = `${36 - singleDigitSum + 10} - ${36 - singleDigitSum + 18}`;
+    const period4 = `${36 - singleDigitSum + 19} - ${36 - singleDigitSum + 27}`;
+    const period5 = `${36 - singleDigitSum + 28} - ∞`;
 
     return [
       { value: dayCell, className: 'cell border' },
@@ -67,21 +82,31 @@ export const Karmic: React.FC = () => {
       { value: yearCell, className: 'cell border' },
       { value: cell4, className: 'cell border' },
       { value: cell5, className: 'cell' },
-      { value: cell6, className: 'cell border green' },
-      { value: cell7, className: 'cell border green' },
-      { value: cell8, className: 'cell border green' },
-      { value: cell9, className: 'cell border green' },
-      { value: cell10, className: 'cell green' },
-      { value: cell11, className: 'cell border purple' },
-      { value: cell12, className: 'cell border purple' },
-      { value: cell13, className: 'cell border purple' },
-      { value: cell14, className: 'cell border purple' },
-      { value: cell15, className: 'cell purple' },
-      { value: period16, className: 'cell border period' },
-      { value: period17, className: 'cell border period' },
-      { value: period18, className: 'cell border period' },
-      { value: period19, className: 'cell border period' },
-      { value: period20, className: 'cell period' },
+      { value: cell6, className: 'cell border blue' },
+      { value: cell7, className: 'cell border blue' },
+      { value: cell8, className: 'cell border blue' },
+      { value: cell9, className: 'cell border blue' },
+      { value: cell10, className: 'cell blue' },
+      { value: cell11, className: 'cell border green' },
+      { value: cell12, className: 'cell border green' },
+      { value: cell13, className: 'cell border green' },
+      { value: cell14, className: 'cell border green' },
+      { value: cell15, className: 'cell green' },
+      { value: cell16, className: 'cell border purple' },
+      { value: cell17, className: 'cell border purple' },
+      { value: cell18, className: 'cell border purple' },
+      { value: cell19, className: 'cell border purple' },
+      { value: cell20, className: 'cell purple' },
+      { value: cell21, className: 'cell border blue' },
+      { value: cell22, className: 'cell border blue' },
+      { value: cell23, className: 'cell border blue' },
+      { value: cell24, className: 'cell border blue' },
+      { value: cell25, className: 'cell blue' },
+      { value: period1, className: 'cell border period' },
+      { value: period2, className: 'cell border period' },
+      { value: period3, className: 'cell border period' },
+      { value: period4, className: 'cell border period' },
+      { value: period5, className: 'cell period' },
     ];
   };
 
@@ -90,7 +115,7 @@ export const Karmic: React.FC = () => {
   return (
     <div className="results-content">
       <h2 className="results-title">{t('results.titles.karmic')}</h2>
-      <div className="karmic-table">
+      <div className="results-table karmic-table">
         {tableData.map((cell, index) => (
           <div key={index} className={cell.className}>
             <span className="number">{cell.value || '-'}</span>

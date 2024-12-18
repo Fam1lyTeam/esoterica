@@ -58,6 +58,15 @@
     "talent": "Talent",
     "spirituality": "Spirituality"
   },
+  "psychological": {
+    "strengthPain": "Strength vs Pain",
+    "successFailure": "Success vs Failure",
+    "mistakesRealization": "Mistakes vs Realization",
+    "controlFreedom": "Control vs Freedom",
+    "pathRealization": "Path of Realization",
+    "expressionBlocks": "Self-Expression Blocks",
+    "mainFear": "Main Fear"
+  },
   "experts": {
     "title": "Numerology Experts",
     "firstText": "This section is under development",

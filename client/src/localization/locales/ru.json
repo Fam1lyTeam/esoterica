@@ -11,7 +11,7 @@
       "karmic": "Кармический портрет",
       "psychological": "Психологический портрет",
       "prognostics": "Прогностика",
-      "relationship": "Нумерология отношения"
+      "relationship": "Нумерология отношений"
     }
   },
   "errors": {
@@ -33,7 +33,7 @@
       "karmic": "Кармический портрет",
       "psychological": "Психологический портрет",
       "prognostics": "Прогностика",
-      "relationship": "Нумерология отношения"
+      "relationship": "Нумерология отношений"
     }
   },
   "pythagoras": {
@@ -56,6 +56,15 @@
     "money": "Быт/Деньги",
     "talent": "Талант",
     "spirituality": "Духовность"
+  },
+  "psychological": {
+    "strengthPain": "Сила vs Боль",
+    "successFailure": "Успех vs Неуспех",
+    "mistakesRealization": "Ошибки vs Реализация",
+    "controlFreedom": "Контроль vs Свобода",
+    "pathRealization": "Путь реализации",
+    "expressionBlocks": "Блоки самовыражения",
+    "mainFear": "Главный страх"
   },
   "experts": {
     "title": "Эксперты по нумерологии",
