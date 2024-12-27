@@ -68,11 +68,7 @@ export const Pythagoras: React.FC = () => {
     // Ячейки в фиксированном порядке
     const orderedCells: CellData[] = [
       // Первая строка
-      {
-        title: t('pythagoras.additional'),
-        value: additionalNumbers.join(', '),
-        className: 'cell border span-2',
-      },
+      { title: t('pythagoras.additional'),value: additionalNumbers.join(', '),className: 'cell border span-2' },
       { title: t('pythagoras.destiny'), value: destinyNumber.toString(), className: 'cell border' },
       { title: t('pythagoras.temperament'), value: countDigitsFromCells(digitCounts, [3, 5, 7]), className: 'cell' },
 

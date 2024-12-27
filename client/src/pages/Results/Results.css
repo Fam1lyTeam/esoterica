@@ -234,3 +234,93 @@
   border: unset;
   background: none;
 }
+
+.prognostics-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0 0;
+  margin-bottom: 30px;
+}
+.prognostics-table h3 {
+  font-size: 1.2rem;
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+}
+.prognostics-content {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 0;
+  width: 100%;
+}
+.prognostics-header,
+.prognostics-row {
+  display: flex;
+  border-top: solid 1px #bd8f35;
+}
+.prognostics-header .cell {
+  font-size: 0.8rem;
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+  padding: 10px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  background-color: #c9b4d1;
+}
+.prognostics-row .cell {
+  font-size: 1.5rem;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  width: 25%;
+}
+.prognostics-header .cell.border,
+.prognostics-row .cell.border {
+  border-right: solid 1px #bd8f35;
+}
+.prognostics-header .cell.group {
+  width: 50%;
+}
+.prognostics-row .cell.red {
+  color: #CB2229;
+}
+.prognostics-row .cell.green {
+  color: #53A253;
+}
+.vibe-row {
+  display: flex;
+  border-top: solid 1px #bd8f35;
+}
+.vibe-row .cell {
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  color: #000;
+  text-align: center;
+}
+.vibe-row .cell.year {
+  border-right: solid 1px #bd8f35;
+  width: 30%;
+}
+.vibe-row .cell.result {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+}
+.vibe-row span {
+  font-size: 1.5rem;
+  color: #000;
+}
+.vibe-row span.red {
+  color: #CB2229;
+}
+.vibe-row span.green {
+  color: #53A253;
+}
+.vibe-row span.firstNum {
+  margin: 0 5px;
+}

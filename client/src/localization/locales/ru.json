@@ -66,6 +66,16 @@
     "expressionBlocks": "Блоки самовыражения",
     "mainFear": "Главный страх"
   },
+  "prognostics": {
+    "vibeYear": "Вайб года",
+    "matrix": "Матрица судьбы",
+    "classicalKarmic": "Классическая и кармическая",
+    "tableHeaders": {
+      "year": "Год",
+      "personalNumber": "Персональное число года",
+      "karmicForecast": "Прогноз года по кармическому портрету"
+    }
+  },
   "experts": {
     "title": "Эксперты по нумерологии",
     "firstText": "Раздел находится в разработке",

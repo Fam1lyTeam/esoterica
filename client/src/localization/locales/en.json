@@ -67,6 +67,16 @@
     "expressionBlocks": "Self-Expression Blocks",
     "mainFear": "Main Fear"
   },
+  "prognostics": {
+    "vibeYear": "Year Vibe",
+    "matrix": "Matrix of Destiny",
+    "classicalKarmic": "Classical and Karmic",
+    "tableHeaders": {
+      "year": "Year",
+      "personalNumber": "Personal Year Number",
+      "karmicForecast": "Karmic Portrait Year Forecast"
+    }
+  },
   "experts": {
     "title": "Numerology Experts",
     "firstText": "This section is under development",
